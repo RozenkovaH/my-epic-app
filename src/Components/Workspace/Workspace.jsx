@@ -8,7 +8,7 @@ import SearchBar from '../SearchBar/SearchBar'
 const Workspace = () => {
 
   const renderTask = () => {
-    const container = document.getElementsByClassName(styles.workspace)[0];
+    const container = document.getElementsByClassName(styles.tasks)[0];
     console.log(container)
     render(
       <Task/>,
@@ -21,6 +21,8 @@ const Workspace = () => {
       <div className={styles.workspace}>
         <WorkspaceHeader onClick={renderTask}/>
         <SearchBar/>
+        <div className={styles.tasks}>
+        </div>
       </div>
     </div>
   )

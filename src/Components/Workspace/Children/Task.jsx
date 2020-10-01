@@ -5,7 +5,7 @@ import TextArea from './TextArea'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import moment from 'moment'
 
-const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
+const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTasksCount, decrementTasksCount }) => {
   const url = 'https://garage-best-team-ever.tk'
 
   const [on, setOn] = useState(true)
@@ -41,8 +41,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
 
   // Рендерит теги только если они есть
   const renderTags = () => {
-    if (typeof tags !== 'undefined') { 
-      return (<Tags tags={tags} setAllTags={setAllTags} magicTag={newTag} idTask = {id} editMode={editMode}/>) 
+    if (typeof tags !== 'undefined') {
+      return (<Tags tags={tags} setAllTags={setAllTags} magicTag={newTag} idTask={id} editMode={editMode} />)
     }
   }
 
@@ -84,9 +84,10 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    }).then((response) => {
-      return response.json()
     })
+      .then((response) => {
+        return response.json()
+      })
       .then((data) => {
         if (taskTitle === '')
           setTaskTitle(data.title)
@@ -109,7 +110,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
       title: title,
       text_content: text.trim(),
       date_target: dateTarget,
-      tags: tags.map(tag => {return tag.name})
+      tags: tags.map(tag => { return tag.name })
     }
 
     fetch(url + api, {
@@ -121,6 +122,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
     })
       .then(() => setEditMode(false))
       .then(() => setIsNewTask(false))
+      .then(() => incrementTasksCount())
   }
 
   const updateTask = () => {
@@ -156,7 +158,9 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
 
     fetch(url + api, {
       method: 'DELETE'
-    }).then(() => setVisible(false))
+    })
+      .then(() => setVisible(false))
+      .then(() => decrementTasksCount())
   }
 
   //------------------------------------
@@ -212,11 +216,10 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open }) => {
             <div className={styles.TitleDataWrapper}>
               <input maxLength="100" placeholder="Добавьте название задачи" className={styles.Title} value={taskTitle}
                 onChange={(e) => {
-                  if (!editMode)
-                    {
-                      e.preventDefault();
-                      return;
-                    }
+                  if (!editMode) {
+                    e.preventDefault();
+                    return;
+                  }
                   else
                     setTaskTitle(e.target.value)
                 }} />

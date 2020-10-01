@@ -8,19 +8,33 @@ import Workspace from './Components/Workspace/Workspace'
 import styles from './AppStyles.module.css'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-      tasks: []
+      tasks: [],
+      tasksCount: 0
     }
+    this.incrementTasksCount = this.incrementTasksCount.bind(this)
+    this.decrementTasksCount = this.decrementTasksCount.bind(this)
   }
 
   componentDidMount() {
-    fetch(`https://garage-best-team-ever.tk/task`).then(data => data.json()).then(json => {this.setState({ tasks: json }); console.log(json) })
+    fetch(`https://garage-best-team-ever.tk/task`).then(data => data.json()).then(json => { this.setState({ tasks: json, tasksCount: json.length }) })
+  }
+
+  incrementTasksCount() {
+    this.setState({
+      tasksCount: this.state.tasksCount + 1
+    })
+  }
+
+  decrementTasksCount() {
+    this.setState({
+      tasksCount: this.state.tasksCount - 1
+    })
   }
 
   render() {
-    const tasksCount = this.state.tasks.length
 
     return (
       <div className={styles.page}>
@@ -29,8 +43,8 @@ class App extends React.Component {
         <SideHeader />
 
         <SideMain />
-        <SideBar tasksCount={tasksCount} />
-        <Workspace tasks={this.state.tasks} />
+        <SideBar tasksCount={this.state.tasksCount} />
+        <Workspace tasks={this.state.tasks} incrementTasksCount={this.incrementTasksCount} decrementTasksCount={this.decrementTasksCount}/>
         <SideMain />
       </div>
     )

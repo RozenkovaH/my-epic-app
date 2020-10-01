@@ -4,11 +4,11 @@ import WorkspaceHeader from './Children/WorkspaceHeader'
 import Task from './Children/Task'
 import SearchBar from './Children/SearchBar'
 
-const Workspace = ({ tasks }) => {
+const Workspace = ({ tasks, incrementTasksCount, decrementTasksCount }) => {
   const [isOpen, setOpen] = useState(false)
 
   const task = () => {
-    if (isOpen) { return <Task tags={[]} open={isOpen} isNew={true}/> }
+    if (isOpen) { return <Task tags={[]} open={isOpen} isNew={true} incrementTasksCount={incrementTasksCount}/> }
   }
 
   const renderTask = () => {
@@ -22,7 +22,7 @@ const Workspace = ({ tasks }) => {
       {task()}
       {tasks.map(task => (
         <Task key={task.id} id={task.id} title={task.title} bodyTask={task.text_content} tags={task.tags} dateTarget={task.date_target} 
-          isNew={false}/>
+          isNew={false} decrementTasksCount={decrementTasksCount}/>
       ))}
     </div>
   )

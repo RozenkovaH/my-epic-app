@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './GreetingStyles.module.css'
 import planner from '../../../Assets/Pictures/Planner.png'
 
-const Greeting = ({tasksCount}) => {
+const Greeting = props => {
   let userName = "User"
 
   return (
@@ -11,7 +11,7 @@ const Greeting = ({tasksCount}) => {
         <img src={planner} className={styles.grImage}/>
       </div>
       <p className={styles.helloUser}>Привет, {userName}!</p>
-      <p className={styles.currentTasks}>Количество текущих задач: <b>{tasksCount}</b></p>
+      <p className={styles.currentTasks}>Количество текущих задач: <b>{props.tasksCount}</b></p>
     </div>
   )
 }

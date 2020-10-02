@@ -13,10 +13,11 @@ const TextArea = (props) => {
 
     // Обновление текстового поля
     useEffect(() => {
-        const newSpeech = props.text
+        const newSpeech = props.text()
 
         // Когда приходит новая обработанная строка, обновляется только она
         if (typeof newSpeech !== 'undefined'){
+            console.log(newSpeech)
             if (props.isListening) {
                 setSpeech(newSpeech)
                 setText(speech !== '' ? finalText + speech + ' ' : finalText + speech)
@@ -36,7 +37,7 @@ const TextArea = (props) => {
     }, [props.isListening])
 
     return(
-        <textarea className={styles.TaskInput} value={text} 
+        <textarea className={styles.TaskInput} value={text} maxLength="35000"
             onChange={
                 (e) => {
                     if (!props.editMode)

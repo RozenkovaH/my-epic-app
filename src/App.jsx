@@ -14,24 +14,17 @@ class App extends React.Component {
       tasks: [],
       tasksCount: 0
     }
-    this.incrementTasksCount = this.incrementTasksCount.bind(this)
-    this.decrementTasksCount = this.decrementTasksCount.bind(this)
+    this.getTasks = this.getTasks.bind(this)
   }
 
   componentDidMount() {
-    fetch(`https://garage-best-team-ever.tk/task`).then(data => data.json()).then(json => { this.setState({ tasks: json, tasksCount: json.length }) })
+    this.getTasks()
   }
 
-  incrementTasksCount() {
-    this.setState({
-      tasksCount: this.state.tasksCount + 1
-    })
-  }
-
-  decrementTasksCount() {
-    this.setState({
-      tasksCount: this.state.tasksCount - 1
-    })
+  getTasks() {
+    fetch(`https://garage-best-team-ever.tk/task`)
+      .then(data => data.json())
+      .then(json => { this.setState({ tasks: json, tasksCount: json.length }) })
   }
 
   render() {
@@ -44,7 +37,7 @@ class App extends React.Component {
 
         <SideMain />
         <SideBar tasksCount={this.state.tasksCount} />
-        <Workspace tasks={this.state.tasks} incrementTasksCount={this.incrementTasksCount} decrementTasksCount={this.decrementTasksCount}/>
+        <Workspace tasks={this.state.tasks} getTasks={this.getTasks}/>
         <SideMain />
       </div>
     )

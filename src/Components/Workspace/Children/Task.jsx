@@ -167,6 +167,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
   const deleteTask = () => {
     if (taskId === undefined) {
       setVisible(false)
+      setOpen(false)
     } else {
       const api = `/task/${taskId}`
 

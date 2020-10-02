@@ -24,7 +24,19 @@ class App extends React.Component {
   getTasks() {
     fetch(`https://garage-best-team-ever.tk/task`)
       .then(data => data.json())
-      .then(json => { this.setState({ tasks: json, tasksCount: json.length }) })
+      .then(json => { this.setState({ 
+        tasks: json.sort( 
+        function (obj2, obj1) {
+          if (obj1.id > obj2.id) {
+            return 1;
+          }
+          if (obj1.id < obj2.id) {
+            return -1;
+          }
+          return 0;
+        }), // сортировка задач по id, новые вверху, старые внизу
+        tasksCount: json.length })
+      })
   }
 
   render() {

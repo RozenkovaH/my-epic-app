@@ -62,7 +62,6 @@ const Tags = props => {
     if (newTag !== '') {
       if (tags.findIndex(tag => tag.name === newTag) === -1)
         setTags([...tags, {name: newTag}])
-    //props.selectedTags([...tags, input]) зачем это вообще здесь?
       event.target.reset()
       setInput("")
     }
@@ -78,7 +77,7 @@ const Tags = props => {
             {props.setAllTags(tags) /*здесь теги передаются в родительский компонент*/}
           </li>
         ))}
-        <form className={styles.addTag} onSubmit={event => addTags(event)}>
+        <form className={styles.addTag} style={{ display: tags.length > 4 && "none"}} onSubmit={event => addTags(event)}>
           <button className={styles.addTagButton} type={'submit'} style={{ display: !props.editMode && "none" }}>+</button>
           <input type="text" maxLength="30" placeholder="Добавьте тег" onChange={e => setInput(e.target.value)} 
             style={{ display: !props.editMode && "none" }}/>

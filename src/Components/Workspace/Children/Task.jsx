@@ -48,7 +48,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
 
   // Распознанная речь рендерится только в том таске, для которого включена запись
   const renderTranscript = () => {
-    if (!on) { return transcript }
+    if (!on)  {console.log(transcript); return transcript }
   }
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {

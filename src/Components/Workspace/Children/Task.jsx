@@ -4,6 +4,9 @@ import Tags from './Tags'
 import TextArea from './TextArea'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import moment from 'moment'
+import { confirmAlert } from 'react-confirm-alert'
+//import styles from './ConfirmStyles.module.css'
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, getTasks }) => {
   const url = 'https://garage-best-team-ever.tk'
@@ -162,18 +165,38 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
   }
 
   const deleteTask = () => {
-    const api = `/task/${taskId}`
+    if (taskId === undefined) {
+      setVisible(false)
+    } else {
+      const api = `/task/${taskId}`
 
-    fetch(url + api, {
-      method: 'DELETE'
-    })
-      .then(() => setVisible(false))
-      .then(() => getTasks())
+      fetch(url + api, {
+        method: 'DELETE'
+      })
+        .then(() => setVisible(false))
+        .then(() => getTasks())
+    }
   }
 
   //------------------------------------
   // Прочие функции
   //------------------------------------
+
+  const deleteWarning = () => {
+    confirmAlert({
+      title: 'Подтверждение',
+      message: 'Вы уверены, что желаете удалить эту заметку?',
+      buttons: [
+        {
+          label: 'Да',
+          onClick: () => deleteTask()
+        },
+        {
+          label: 'Нет, я передумал :з',
+        }
+      ]
+    });
+  };
 
   // маппинг тегов в массив объектов
   const mapTags = tags => {
@@ -274,7 +297,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
               <path d="M5,21h14c1.104,0,2-0.896,2-2V8l-5-5H5C3.896,3,3,3.896,3,5v14C3,20.104,3.896,21,5,21z M7,5h4v2h2V5h2v4h-1h-1h-2H9H7V5z M7,13h10v6h-2H9H7V13z" fill="#747E8A" />
             </svg>
           </button>
-          <button className={styles.DelIconContainer} onClick={deleteTask}>
+          <button className={styles.DelIconContainer} onClick={deleteWarning}>
             <svg className={styles.Icon + ' ' + styles.IconBottom} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path d="M5 8v12c0 1.104.896 2 2 2h10c1.104 0 2-.896 2-2V8c0 0-.447 0-1 0H6C5.447 8 5 8 5 8zM3 6L8 6 16 6 21 6 21 4 16.618 4 15 2 9 2 7.382 4 3 4z" fill="#747E8A" />
             </svg>

@@ -36,7 +36,7 @@ const TextArea = (props) => {
     }, [props.isListening])
 
     return(
-        <textarea className={styles.TaskInput} value={text} 
+        <textarea className={styles.TaskInput} value={text} maxLength="35000"
             onChange={
                 (e) => {
                     if (!props.editMode)

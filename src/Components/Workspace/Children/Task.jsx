@@ -5,7 +5,7 @@ import TextArea from './TextArea'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import moment from 'moment'
 
-const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTasksCount, decrementTasksCount }) => {
+const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, getTasks }) => {
   const url = 'https://garage-best-team-ever.tk'
 
   const [on, setOn] = useState(true)
@@ -98,17 +98,23 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTas
 
   const saveTask = () => {
     const api = '/task'
-    const title = getTitle()
+    const title = getTitle().trim()
+    const textContent = text.trim()
+
+    if (title === '' && textContent == '')
+      return
+
     const tags = mapTags(allTags)
     let dateTarget = time
     if (typeof time === 'undefined' || time === '') {
       setTime(moment().add(1, 'days').startOf('hour').format('YYYY-MM-DD HH:mm:ss'))
       dateTarget = moment().add(1, 'days').startOf('hour').format('YYYY-MM-DD HH:mm:ss')
     }
+
     const data = {
       user_id: 0,
       title: title,
-      text_content: text.trim(),
+      text_content: textContent,
       date_target: dateTarget,
       tags: tags.map(tag => { return tag.name })
     }
@@ -122,7 +128,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTas
     })
       .then(() => setEditMode(false))
       .then(() => setIsNewTask(false))
-      .then(() => incrementTasksCount())
+      .then(() => getTasks())
+      .then(() => setOpen(false))
   }
 
   const updateTask = () => {
@@ -151,6 +158,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTas
       body: JSON.stringify(data)
     })
       .then(() => setEditMode(false))
+      .then(() => getTasks())
   }
 
   const deleteTask = () => {
@@ -160,7 +168,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, incrementTas
       method: 'DELETE'
     })
       .then(() => setVisible(false))
-      .then(() => decrementTasksCount())
+      .then(() => getTasks())
   }
 
   //------------------------------------

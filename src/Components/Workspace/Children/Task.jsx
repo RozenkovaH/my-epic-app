@@ -182,10 +182,11 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
   // Прочие функции
   //------------------------------------
 
+  // поп ап при удалении задачи
   const deleteWarning = () => {
     confirmAlert({
       title: 'Подтверждение',
-      message: 'Вы уверены, что желаете удалить эту заметку?',
+      message: 'Вы уверены, что желаете удалить эту задачу?',
       buttons: [
         {
           label: 'Да',

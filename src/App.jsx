@@ -22,7 +22,6 @@ class App extends React.Component {
   }
 
   getTasks() {
-    console.log(1)
     fetch(`https://garage-best-team-ever.tk/task`)
       .then(data => data.json())
       .then(json => { this.setState({ tasks: json, tasksCount: json.length }) })

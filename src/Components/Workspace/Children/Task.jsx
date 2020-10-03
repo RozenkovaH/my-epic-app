@@ -5,10 +5,9 @@ import TextArea from './TextArea'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import moment from 'moment'
 import { confirmAlert } from 'react-confirm-alert'
-//import styles from './ConfirmStyles.module.css'
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, getTasks }) => {
+const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, getTasks, isImportant }) => {
   const url = 'https://garage-best-team-ever.tk'
 
   const [on, setOn] = useState(true)
@@ -20,10 +19,11 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
   const { transcript, listening, resetTranscript } = useSpeechRecognition()
   const [text, setText] = useState('')
   const [allTags, setAllTags] = useState([])
-  const [newTag, setNewTag] = useState();
-  const [time, setTime] = useState('');
+  const [newTag, setNewTag] = useState()
+  const [time, setTime] = useState('')
   useEffect(() => setTime(dateTarget), [])
-  const [taskTitle, setTaskTitle] = useState('');
+  const [taskTitle, setTaskTitle] = useState('')
+  const [priority, setPriority] = useState(isImportant)
 
   useEffect(() => {
     if (typeof title === 'undefined')
@@ -96,6 +96,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
           setTaskTitle(data.title)
         setTime(data.date_target)
         setNewTag(data.tag)
+        setPriority(data.importance == 1 ? true : false)
       })
   }
 
@@ -119,7 +120,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
       title: title,
       text_content: textContent,
       date_target: dateTarget,
-      tags: tags.map(tag => { return tag.name })
+      tags: tags.map(tag => { return tag.name }),
+      is_important: priority
     }
 
     fetch(url + api, {
@@ -139,9 +141,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
     if (typeof taskId === 'undefined')
       return;
     const api = `/task/${taskId}`
-    const title = getTitle() //новый title сохраняется
-    const tags = mapTags(allTags) //тэги не сохраняются
-    let dateTarget = time //дату нельзя редактировать - почему?
+    const title = getTitle()
+    let dateTarget = time
     if (typeof time === 'undefined' || time === '') {
       setTime(moment().add(1, 'days').startOf('hour').format('YYYY-MM-DD HH:mm:ss'))
       dateTarget = moment().add(1, 'days').startOf('hour').format('YYYY-MM-DD HH:mm:ss')
@@ -149,8 +150,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
     const data = {
       title: title,
       text_content: text.trim(),
-      date_target: dateTarget/*,
-      tags: tags.map(tag => {return tag.name})*/
+      date_target: dateTarget
     }
 
     fetch(url + api, {
@@ -245,6 +245,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
       <details open={open || editMode} onKeyUp={checkSpace}>
         <summary className={styles.TaskTitleContainer}>
           <div className={styles.CheckboxTitleWrapper}>
+          <div className={styles.priority} style={ priority === true ? {background: "#FF005B"} : {background: "none"} } />
             <input type="checkbox" className={styles.Checkbox} />
             <div className={styles.TitleDataWrapper}>
               <input maxLength="100" placeholder="Добавьте название задачи" className={styles.Title} value={taskTitle}

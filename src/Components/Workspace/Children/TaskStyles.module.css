@@ -206,6 +206,14 @@ svg:hover path {
     fill: #424242;
 }
 
+.priority {
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: -5px;
+}
+
 /* Закомментила, т.к. пока нет адаптивной вёрстки */
 
 /*@media screen and (max-width: 917px) {

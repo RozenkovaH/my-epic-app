@@ -73,7 +73,7 @@ const Tags = props => {
         {tags.map((tag, index) => (
           <li key={index} className={styles.tag}>
             <span className={styles.tagTitle}>{tag.name}</span>
-            <span className={styles.tagRemoveIcon} onClick={() => removeTags(tag.id, index)}>x</span>
+            <span className={styles.tagRemoveIcon} style={{ display: !props.editMode && "none" }} onClick={() => removeTags(tag.id, index)}>x</span>
             {props.setAllTags(tags) /*здесь теги передаются в родительский компонент*/}
           </li>
         ))}

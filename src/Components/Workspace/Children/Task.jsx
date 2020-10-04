@@ -161,6 +161,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
       body: JSON.stringify(data)
     })
       .then(() => setEditMode(false))
+      .then(() => setTaskTitle(title))
       .then(() => getTasks())
   }
 

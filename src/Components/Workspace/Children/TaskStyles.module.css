@@ -173,6 +173,7 @@ summary:focus {
 details{
     display:block;
     font-size: 30px;
+    max-height: 150px;
 }
 
 .TaskActions {

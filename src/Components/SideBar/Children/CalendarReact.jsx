@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import 'react-calendar/dist/Calendar.css'
 import styles from './CalendarReactStyles.module.css'
+import 'react-calendar/dist/Calendar.css'
 import Calendar from 'react-calendar'
 
 const CalendarReact = () => {

@@ -59,30 +59,12 @@
     color: #00244D;
 }
 
-/*@media screen and (max-width: 1000px) {
-    .HeaderWrapper {
-        margin: 0;
+@media screen and (max-width: 909px) {
+    .header {
+        padding-left: 1%;
     }
-
-    .HeaderWrapperTwo {
-        display: flex;
-        flex-wrap: nowrap;
-
+    
+    .headerInfo {
+        right: 1%;
     }
-}*/
-
-
-/*@media screen and (max-width: 335px) {
-    .Header {
-        min-width: 335px;
-    }
-
-    .HeaderRight {
-        padding-left: 10px;
-    }
-
-    .HeaderTitleNameApp {
-        font-size: 15px;
-        line-height: 20px;
-    }
-}*/
+}

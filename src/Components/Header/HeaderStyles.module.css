@@ -98,6 +98,11 @@
     }
 
     .header svg {
+        width: 4em;
+        height: 4em;
+    }
+
+    .header .headerInfo svg {
         height: 2.5em;
         width: 2.5em;
     }

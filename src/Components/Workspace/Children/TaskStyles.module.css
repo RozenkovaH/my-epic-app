@@ -215,33 +215,15 @@ svg:hover path {
     left: -5px;
 }
 
-/* Закомментила, т.к. пока нет адаптивной вёрстки */
-
-/*@media screen and (max-width: 917px) {
-    .Icon{
-        width: 12px;
-    }
-
-    .IconBottom {
-        width: 16px !important;
-    }
-
-}
-
-
-@media screen and (max-width: 1366px) {
-    summary:before {
-        right: 2%;
-    }
-
-} */
-
 @media screen and (max-width: 767px) {
+
     .TaskContainer input {
         font-size: 1.5em;
     }
 
     .TaskContainer time {
+        margin-top: 0.5em;
         font-size: 1.1em;
     }
+    
 }

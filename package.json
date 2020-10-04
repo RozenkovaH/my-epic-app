@@ -51,6 +51,7 @@
     "react-hot-loader": "^4.12.21",
     "react-icons": "^3.11.0",
     "react-speech-recognition": "^3.2.3",
+    "react-tooltip": "^4.2.10",
     "style-loader": "^1.2.1"
   }
 }

@@ -26,7 +26,7 @@ class App extends React.Component {
       .then(data => data.json())
       .then(json => { this.setState({ 
         tasks: json.sort( 
-        function (obj2, obj1) {
+        (obj2, obj1) => {
           if (obj1.id > obj2.id) {
             return 1;
           }

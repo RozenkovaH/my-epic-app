@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import ReactTooltip from 'react-tooltip'
 import styles from './TaskStyles.module.css'
 import Tags from './Tags'
 import TextArea from './TextArea'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import moment from 'moment'
 import { confirmAlert } from 'react-confirm-alert'
-import 'react-confirm-alert/src/react-confirm-alert.css';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, getTasks, isImportant }) => {
   const url = 'https://garage-best-team-ever.tk'
@@ -296,7 +297,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
           <button style={{ fontFamily: 'Graphik', fontWeight: 600, display: !editMode && "none" }} className={styles.magic} /*onMouseEnter={playMusic} onMouseLeave={stopMusic}*/ onClick={doMagic}>МАГИЯ</button>
         </div>
         <div className={styles.DelAndSave}>
-          <button className={styles.DelIconContainer} style={{ display: !editMode && "none" }} onClick={isNewTask ? saveTask : updateTask}>
+          <ReactTooltip place="top" type="dark" effect="solid" multiline={true} offset={{left: 6}} disable={(taskTitle === '' && text === '') ? false : true}/>
+          <button className={styles.DelIconContainer} style={{ display: !editMode && "none" }} data-tip="Пожалуйста, введите<br/>заголовок и текст задачи" onClick={isNewTask ? saveTask : updateTask}>
             <svg className={styles.Icon + ' ' + styles.IconBottom + ' ' + styles.IconSave} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path d="M5,21h14c1.104,0,2-0.896,2-2V8l-5-5H5C3.896,3,3,3.896,3,5v14C3,20.104,3.896,21,5,21z M7,5h4v2h2V5h2v4h-1h-1h-2H9H7V5z M7,13h10v6h-2H9H7V13z" fill="#747E8A" />
             </svg>

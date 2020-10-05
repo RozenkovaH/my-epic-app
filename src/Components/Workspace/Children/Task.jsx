@@ -151,7 +151,8 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
     const data = {
       title: title,
       text_content: text.trim(),
-      date_target: dateTarget
+      date_target: dateTarget,
+      is_important: priority
     }
 
     fetch(url + api, {

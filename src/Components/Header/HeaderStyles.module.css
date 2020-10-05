@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20em;
+    width: 16.5em;
 }
 
 .headerTitleNameApp {
@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 991px) {
     .headerTitle {
-        width: 18.5em;
+        width: 16.5em;
     }
 }
 
@@ -79,10 +79,11 @@
     img {
         width: 4em;
         height: 4em;
+        padding: 4%;
     }
 
     .headerTitle {
-        width: 26em;
+        width: 20em;
     }
 
     .headerInfo {
@@ -94,12 +95,13 @@
     }
 
     .headerTitleNameApp {
-        font-size: 1.7em;
+        font-size: 1.4em;
     }
 
-    .header svg {
+    .headerTitle svg {
         width: 4em;
         height: 4em;
+        padding: 0.3em;
     }
 
     .header .headerInfo svg {

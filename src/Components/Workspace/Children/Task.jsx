@@ -117,7 +117,6 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
     }
 
     const data = {
-      user_id: 0,
       title: title,
       text_content: textContent,
       date_target: dateTarget,

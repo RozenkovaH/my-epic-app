@@ -49,7 +49,7 @@ class App extends React.Component {
       <Router>
         { !this.state.isSignedIn ? <Redirect to="/signin" /> : <Redirect to="/" />}
         <Route exact path="/signin">
-          <Signin isSignedIn={this.state.isSignedIn} />
+          <Signin />
         </Route>
         <Route exact path="/">
           <div className={styles.page}>

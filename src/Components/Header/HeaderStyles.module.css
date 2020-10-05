@@ -24,13 +24,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 16.5em;
+    width: 19em;
 }
 
 .headerTitleNameApp {
     font-family: "Sharp Grotesk Medium 20", sans-serif;
     font-size: 1.2em;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .headerInfo {
@@ -72,9 +72,6 @@
 }
 
 @media screen and (max-width: 991px) {
-    .headerTitle {
-        width: 16.5em;
-    }
 }
 
 @media screen and (max-width: 909px) {
@@ -91,6 +88,8 @@
     .ava {
         margin-bottom: 4%;
         margin-top: 4%;
+        width: 40.5px;
+        height: 40.5px;
     }
 
     .header {
@@ -98,7 +97,7 @@
     }
 
     .headerTitle {
-        width: 18em;
+        width: 19em;
     }
 
     .headerInfo {
@@ -110,17 +109,17 @@
     }
 
     .headerTitleNameApp {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .headerTitle svg {
-        width: 3em;
-        height: 3em;
+        width: 2.7em;
+        height: 2.7em;
     }
 
     .header .headerInfo svg {
-        height: 2em;
-        width: 2em;
+        height: 1.7em;
+        width: 1.7em;
     }
 }
 

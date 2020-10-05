@@ -30,7 +30,8 @@
 .headerTitleNameApp {
     font-family: "Sharp Grotesk Medium 20", sans-serif;
     font-size: 1.2em;
-    text-transform: uppercase
+    text-transform: uppercase;
+    margin-left: 20px;
 }
 
 .headerInfo {

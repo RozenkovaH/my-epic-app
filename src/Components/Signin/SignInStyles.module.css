@@ -39,3 +39,38 @@
     font-family: "Sharp Grotesk Medium 20", sans-serif;
     font-size: 32px;
 }
+
+.googleBtn {
+    padding: 0;
+    border: none;
+    width: 250px;
+    height: 53px;
+    border-radius: 4px;
+    background-color: #0073F7;
+    display: flex;
+    cursor: pointer;
+}
+
+.googleBtn:hover {
+    background: #004df0;
+}
+
+.googleBtn:focus {
+    outline: none;
+}
+
+.googleBtn svg {
+    padding-left: 6px;
+}
+
+.googleBtn p {
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+    padding-top: 15px;
+    color: white;
+    font-family: "Graphik", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}

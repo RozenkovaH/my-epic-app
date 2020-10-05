@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './HeaderStyles.module.css'
-import logo from '../../Assets/Pictures/Logo.png'
-import userIcon from '../../Assets/Pictures/userIcon.png'
 
 const Header = () => {
   return (
@@ -10,8 +8,8 @@ const Header = () => {
           <div className={styles.headerTitle}>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="22" cy="22" r="22" fill="#0073F7"/>
-              <circle cx="22" cy="22" r="12" stroke="white" strokeWidth="2"/>
-              <path d="M32.04 9.78623L20.5239 22.0655L18.0515 19.6491C17.259 18.6096 15.7924 18.4164 14.7939 19.3552C13.8615 20.2319 13.7486 21.733 14.4663 22.7644L18.6408 28.7644C19.0484 29.3502 19.6702 29.7102 20.3512 29.7469C21.0339 29.7838 21.6925 29.4908 22.1544 28.9405C22.1545 28.9403 22.1547 28.9401 22.1548 28.94L35.3988 13.1909L35.3996 13.19C36.2132 12.2202 36.1997 10.7161 35.3605 9.76463C34.4496 8.73193 32.9308 8.75128 32.04 9.78623Z" fill="white" stroke="#0073F7" strokeWidth="2"/>
+              <circle cx="22" cy="22" r="12" stroke="white" stroke-width="2"/>
+              <path d="M32.04 9.78623L20.5239 22.0655L18.0515 19.6491C17.259 18.6096 15.7924 18.4164 14.7939 19.3552C13.8615 20.2319 13.7486 21.733 14.4663 22.7644L18.6408 28.7644C19.0484 29.3502 19.6702 29.7102 20.3512 29.7469C21.0339 29.7838 21.6925 29.4908 22.1544 28.9405C22.1545 28.9403 22.1547 28.9401 22.1548 28.94L35.3988 13.1909L35.3996 13.19C36.2132 12.2202 36.1997 10.7161 35.3605 9.76463C34.4496 8.73193 32.9308 8.75128 32.04 9.78623Z" fill="white" stroke="#0073F7" stroke-width="2"/>
             </svg>
 
             <h1 className={styles.headerTitleNameApp}>Best Planner Ever</h1>
@@ -25,7 +23,7 @@ const Header = () => {
               </svg>
             </div>
             <h2 className={styles.headerInfoName}>User</h2>
-            <img className={styles.PersonInfo_Photo_thumb} src={userIcon}/>
+            <div className={styles.ava}/>
 
           </div>
 

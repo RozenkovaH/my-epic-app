@@ -30,8 +30,7 @@
 .headerTitleNameApp {
     font-family: "Sharp Grotesk Medium 20", sans-serif;
     font-size: 1.2em;
-    text-transform: uppercase;
-    margin-left: 20px;
+    text-transform: uppercase
 }
 
 .headerInfo {
@@ -60,6 +59,18 @@
     color: #00244D;
 }
 
+.ava {
+    width: 3em;
+    height: 3em;
+
+    background: url("../../Assets/Pictures/userIcon.png");
+    background-size: cover;
+    background-position: center;
+
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 991px) {
     .headerTitle {
         width: 16.5em;
@@ -68,27 +79,30 @@
 
 @media screen and (max-width: 909px) {
     .header {
-        padding-left: 1%;
+        padding-left: 3%;
     }
     
     .headerInfo {
-        right: 1%;
+        right: 3%;
     }
 }
 
 @media screen and (max-width: 767px) {
-    img {
-        width: 4em;
-        height: 4em;
-        padding: 4%;
+    .ava {
+        margin-bottom: 4%;
+        margin-top: 4%;
+    }
+
+    .header {
+        height: 3.8em;
     }
 
     .headerTitle {
-        width: 20em;
+        width: 18em;
     }
 
     .headerInfo {
-        width: 8em;
+        width: 5.7em;
     }
 
     .headerInfoName {
@@ -100,14 +114,13 @@
     }
 
     .headerTitle svg {
-        width: 4em;
-        height: 4em;
-        padding: 0.3em;
+        width: 3em;
+        height: 3em;
     }
 
     .header .headerInfo svg {
-        height: 2.5em;
-        width: 2.5em;
+        height: 2em;
+        width: 2em;
     }
 }
 

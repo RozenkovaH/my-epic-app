@@ -14,7 +14,7 @@ const SignIn = ({ isSignedIn }) => {
           <h1>THE BEST PLANNER EVER</h1>
         </div>
         <form action='https://garage-best-team-ever.tk/google-auth'>
-          <button className={styles.googleBtn} onClick={isSignedIn = true}>
+          <button className={styles.googleBtn} onClick={() => isSignedIn = true}>
             <svg width="48" height="53" viewBox="0 0 48 53" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="48" height="53" fill="white" />
               <path d="M15.427 29.5251L14.4176 33.2935L10.728 33.3715C9.62543 31.3264 9 28.9865 9 26.5C9 24.0955 9.58476 21.8281 10.6213 19.8316L13.9068 20.4338L15.3457 23.6988C15.0445 24.5768 14.8804 25.5193 14.8804 26.5C14.8805 27.5644 15.0733 28.5842 15.427 29.5251Z" fill="#FBBB00" />

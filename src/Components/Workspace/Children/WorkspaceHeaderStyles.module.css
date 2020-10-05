@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 3vw 4% 2% 4%;
+    padding: 5% 5% 2% 5%;
 
     border-bottom: 1px solid rgba(0, 36, 77, 0.08);
 }
@@ -59,4 +59,20 @@
 
 .feedback:hover {
     background: #004df0;
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        padding: 3%;
+    }
+
+    .addTask {
+        font-size: 18px;
+        width: 7em;
+    }
+
+    .feedback {
+        font-size: 18px;
+        padding: 1em 1.5em;
+    }
 }

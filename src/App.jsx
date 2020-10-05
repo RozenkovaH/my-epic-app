@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       tasks: [],
       tasksCount: 0,
-      isyes: true
+      isSignedIn: false
     }
     this.getTasks = this.getTasks.bind(this)
   }
@@ -47,9 +47,9 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-        { this.state.isyes === true ? <Redirect to="/signin" /> : <Redirect to="/" />}
+        { !this.state.isSignedIn ? <Redirect to="/signin" /> : <Redirect to="/" />}
         <Route exact path="/signin">
-          <Signin />
+          <Signin isSignedIn={this.state.isSignedIn} />
         </Route>
         <Route exact path="/">
           <div className={styles.page}>

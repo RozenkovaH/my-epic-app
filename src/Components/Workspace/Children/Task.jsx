@@ -229,6 +229,15 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
     setText(textFromTextArea)
   }
 
+  // получение текста кнопки Magic
+  const magicText = () => {
+    let wi = window.innerWidth;
+    if (wi <= 767)
+      return "🔮"
+    else
+      return "МАГИЯ"
+  }
+
   // проигрывание и остановка аудиозаписи
   /* const audio = new Audio('https://mp3minusovki.com/music/fhvndfjwserjgt/247bab1c312b2335afe3f5c9b496a3d3/6bad677b8e56574e16c632292cd219e0.mp3')
  
@@ -293,7 +302,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
           renderTags()
         }
         <div className={styles.magicWrapper}>
-          <button style={{ fontFamily: 'Graphik', fontWeight: 600, display: !editMode && "none" }} className={styles.magic} /*onMouseEnter={playMusic} onMouseLeave={stopMusic}*/ onClick={doMagic}>МАГИЯ</button>
+          <button style={{ fontFamily: 'Graphik', fontWeight: 600, display: !editMode && "none" }} className={styles.magic} /*onMouseEnter={playMusic} onMouseLeave={stopMusic}*/ onClick={doMagic}>{magicText()}</button>
         </div>
         <div className={styles.DelAndSave}>
           <button className={styles.DelIconContainer} style={{ display: !editMode && "none" }} onClick={isNewTask ? saveTask : updateTask}>

@@ -1,3 +1,15 @@
 .sideBar {
     position: relative;
 }
+
+@media screen and (max-width: 909px) {
+    .sideBar {
+        padding-left: 4%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sideBar {
+        display: none;
+    }
+}

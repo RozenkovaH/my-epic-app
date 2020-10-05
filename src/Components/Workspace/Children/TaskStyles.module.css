@@ -9,7 +9,7 @@
 {
     margin-right: 15px;
     cursor: pointer;
-    width: 8vw;
+    width: 7vw;
     min-width: 84px;
     height: 32px;
     text-align: center;
@@ -215,24 +215,26 @@ svg:hover path {
     left: -5px;
 }
 
-/* Закомментила, т.к. пока нет адаптивной вёрстки */
+@media screen and (max-width: 767px) {
 
-/*@media screen and (max-width: 917px) {
-    .Icon{
-        width: 12px;
+    .TaskContainer input {
+        font-size: 18px;
     }
 
-    .IconBottom {
-        width: 16px !important;
+    .TaskContainer time {
+        margin-top: 0.5em;
+        font-size: 1.0em;
     }
 
-}
+    .magic {
+        background: none;
+        min-width: 34px;
+        width: 34px;
+        font-size: 26px;
+    }
 
-
-@media screen and (max-width: 1366px) {
     summary:before {
-        right: 2%;
+        background: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC41OSAxNi4zNGw0LjU4LTQuNTktNC41OC00LjU5TDEwIDUuNzVsNiA2LTYgNnoiLz48L3N2Zz4=) no-repeat 50% 50% / 1.5em 1.5em;
+        right: 3%;
     }
-
-} */
-
+}

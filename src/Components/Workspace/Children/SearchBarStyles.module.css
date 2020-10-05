@@ -7,6 +7,10 @@
     border-radius: 8px;
     box-sizing: border-box;
     padding: 10px 16px 10px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .searchText {
@@ -21,5 +25,20 @@
 }
 
 .searchBtn {
-    float: right;
+    height: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .searchBox {
+        height: 3em;
+    }
+
+    .searchBtn {
+        height: 2em;
+    }
+
+    .searchText {
+        font-size: 18px;
+        width: 100%;
+    }
 }

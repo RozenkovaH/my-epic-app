@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20em;
+    width: 16.5em;
 }
 
 .headerTitleNameApp {
@@ -59,30 +59,63 @@
     color: #00244D;
 }
 
-/*@media screen and (max-width: 1000px) {
-    .HeaderWrapper {
-        margin: 0;
+@media screen and (max-width: 991px) {
+    .headerTitle {
+        width: 16.5em;
+    }
+}
+
+@media screen and (max-width: 909px) {
+    .header {
+        padding-left: 1%;
+    }
+    
+    .headerInfo {
+        right: 1%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    img {
+        width: 4em;
+        height: 4em;
+        padding: 4%;
     }
 
-    .HeaderWrapperTwo {
-        display: flex;
-        flex-wrap: nowrap;
-
-    }
-}*/
-
-
-/*@media screen and (max-width: 335px) {
-    .Header {
-        min-width: 335px;
+    .headerTitle {
+        width: 20em;
     }
 
-    .HeaderRight {
-        padding-left: 10px;
+    .headerInfo {
+        width: 8em;
     }
 
-    .HeaderTitleNameApp {
-        font-size: 15px;
-        line-height: 20px;
+    .headerInfoName {
+        display: none;
     }
-}*/
+
+    .headerTitleNameApp {
+        font-size: 1.4em;
+    }
+
+    .headerTitle svg {
+        width: 4em;
+        height: 4em;
+        padding: 0.3em;
+    }
+
+    .header .headerInfo svg {
+        height: 2.5em;
+        width: 2.5em;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    .headerTitle {
+        width: 4em;
+    }
+
+    .headerTitleNameApp {
+        display: none;
+    }
+}

@@ -27,3 +27,9 @@
     border-right: 1px solid rgba(0, 36, 77, 0.08);
     border-left: 1px solid rgba(0, 36, 77, 0.08);
 }
+
+@media screen and (max-width: 767px) {
+    .workspace {
+        width: 100vw;
+    }
+}

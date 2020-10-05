@@ -85,8 +85,13 @@
 	height: 32px;
 }
 
-@media screen and (max-width: 567px) {
-	.labelsInput {
-		width: calc(100vw - 32px);
+@media screen and (max-width: 767px) {
+    .tag .tagTitle {
+		margin: 0;
+        font-size: 18px;
+	}
+	
+	.addTag input {
+		font-size: 18px;
 	}
 }

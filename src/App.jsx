@@ -7,6 +7,7 @@ import SideBar from './Components/SideBar/SideBar'
 import Workspace from './Components/Workspace/Workspace'
 import styles from './AppStyles.module.css'
 import Signin from './Components/Signin/Signin'
+import Cookies from 'js-cookie'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
@@ -15,13 +16,17 @@ class App extends React.Component {
     this.state = {
       tasks: [],
       tasksCount: 0,
-      isSignedIn: false
+      token: undefined
     }
     this.getTasks = this.getTasks.bind(this)
   }
 
   componentDidMount () {
     this.getTasks()
+    console.log(Cookies.get('accessToken'))
+    const token = Cookies.get('accessToken')
+    this.setState({ token: token })
+    console.log(this.state.token)
   }
 
   getTasks () {
@@ -47,7 +52,7 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-        { !this.state.isSignedIn ? <Redirect to="/signin" /> : <Redirect to="/" />}
+        { this.state.token === undefined ? <Redirect to="/signin" /> : <Redirect to="/" />}
         <Route exact path="/signin">
           <Signin />
         </Route>

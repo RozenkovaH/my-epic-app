@@ -68,11 +68,11 @@
 
     .addTask {
         font-size: 18px;
-        width: 6.0em;
+        width: 7em;
     }
 
     .feedback {
         font-size: 18px;
-        padding: 1em 1.0em;
+        padding: 1em 1.5em;
     }
 }

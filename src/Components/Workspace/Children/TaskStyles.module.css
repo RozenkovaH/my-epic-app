@@ -14,7 +14,7 @@
     height: 32px;
     text-align: center;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     box-sizing: border-box;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
@@ -213,12 +213,12 @@ svg:hover path {
 @media screen and (max-width: 767px) {
 
     .TaskContainer input {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .TaskContainer time {
         margin-top: 0.5em;
-        font-size: 1.0em;
+        font-size: 14px;
     }
 
     .magic {

@@ -39,7 +39,7 @@
 }
 
 .feedback {
-    padding: 15px 2.5em;
+    padding: 15px 1.65em;
     text-decoration: none;
     background: #0073F7;
     border-radius: 6px;
@@ -67,12 +67,17 @@
     }
 
     .addTask {
-        font-size: 18px;
-        width: 6em;
+        font-size: 15px;
+        width: 7em;
+        height: 35px;
     }
 
     .feedback {
-        font-size: 18px;
-        padding: 1em 1em;
+        font-size: 15px;
+        padding: 10px 0.65em;
+    }
+
+    .header h2 {
+        font-size: 26px;
     }
 }

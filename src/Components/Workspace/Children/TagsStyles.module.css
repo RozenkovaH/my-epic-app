@@ -88,11 +88,11 @@
 @media screen and (max-width: 767px) {
     .tag .tagTitle {
 		margin: 0;
-        font-size: 18px;
+        font-size: 15px;
 	}
 	
 	.addTag input {
-		font-size: 18px;
+		font-size: 15px;
 		width: 100%;
 	}
 }

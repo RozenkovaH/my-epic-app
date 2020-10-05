@@ -125,11 +125,6 @@ time {
     cursor: pointer;
 }
 
-.IconWrapper:last-child {
-    border-right: 1px solid #C5D0DB;
-}
-
-
 summary::-webkit-details-marker{
     display:none;
 
@@ -228,9 +223,9 @@ svg:hover path {
 
     .magic {
         background: none;
-        min-width: 34px;
-        width: 34px;
-        font-size: 26px;
+        min-width: 30px;
+        width: 30px;
+        font-size: 22px;
     }
 
     summary:before {

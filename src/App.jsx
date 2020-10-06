@@ -35,7 +35,7 @@ class App extends React.Component {
     fetch('https://garage-best-team-ever.tk/whoami')
       .then(data => data.json())
       .then(json => this.setState({ user: json }))
-      .then(json => console.log(json))
+      .then(() => console.log(this.state.user))
   }
 
   getTasks () {

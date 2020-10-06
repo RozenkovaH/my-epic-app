@@ -26,7 +26,6 @@ const SignIn = props => {
           </button>
         </form>
       </div>
-      {/* применить overflow: hidden к данной конкретной странице, чтобы размер векторной графики не вызывал появление скролла */}
       <svg className={styles.abstractShapes} position="fixed" top="0" bottom="0" left="0" right="0" viewBox="0 0 1440 780" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 760.678V60C33.5288 69.7493 127.541 199.033 122.281 405.464C118.074 570.609 39.0073 711.084 0 760.678Z" fill="#EE00AB" fill-opacity="0.6" />
         <path d="M129.623 452.676C115.738 248.198 37.4225 135.523 0 104.746V780C48.9927 756.091 143.507 657.154 129.623 452.676Z" fill="#EE00AB" fill-opacity="0.4" />

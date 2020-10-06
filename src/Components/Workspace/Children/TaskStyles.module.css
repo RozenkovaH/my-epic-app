@@ -5,9 +5,8 @@
     margin-left: auto;
 }
 
-.magic
-{
-    margin-right: 15px;
+.magic {
+    margin-right: 20px;
     cursor: pointer;
     width: 6vw;
     min-width: 84px;
@@ -198,7 +197,7 @@ button:focus {
     background: none;
 }
 
-.Icon svg:hover path {
+.Icon:hover path {
     fill: #424242;
 }
 
@@ -208,6 +207,11 @@ button:focus {
     width: 10px;
     height: 10px;
     left: -5px;
+}
+
+.IconSave {
+    width: 26px;
+    height: 26px;
 }
 
 @media screen and (max-width: 767px) {
@@ -226,10 +230,16 @@ button:focus {
         min-width: 30px;
         width: 30px;
         font-size: 22px;
+        margin-right: 13px;
     }
 
     summary:before {
         background: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC41OSAxNi4zNGw0LjU4LTQuNTktNC41OC00LjU5TDEwIDUuNzVsNiA2LTYgNnoiLz48L3N2Zz4=) no-repeat 50% 50% / 1.5em 1.5em;
         right: 3%;
+    }
+
+    .IconSave {
+        width: 24px;
+        height: 24px;
     }
 }

@@ -41,7 +41,7 @@
     align-items: center;
 }
 
-.faq:hover {
+.faq:hover path {
     fill: #3e3e3e;
 }
 
@@ -65,7 +65,6 @@
 .ava {
     width: 3em;
     height: 3em;
-    /* border: 1px solid rgb(224, 224, 224); */
     border-radius: 50%;
     margin-left: 0.5vw;
 }
@@ -76,9 +75,6 @@
 
 .header a svg {
     height: 1.4em;
-}
-
-@media screen and (max-width: 991px) {
 }
 
 @media screen and (max-width: 909px) {
@@ -101,15 +97,13 @@
         height: 3.8em;
     }
 
-    .header a svg {
-        height: 1em;
-    }
-
     .headerTitle {
         width: 19em;
     }
 
-    .headerInfo {
+    .headerTitle svg {
+        min-width: 40px;
+        min-height: 40px;
     }
 
     .headerInfoName {
@@ -120,14 +114,13 @@
         font-size: 1.2em;
     }
 
-    .headerTitle svg {
-        width: 2.7em;
-        height: 2.7em;
+    .headerInfo svg {
+        margin: 0 5px;
     }
 
-    .header .headerInfo svg {
-        height: 1.7em;
-        width: 1.7em;
+    .bell {
+        width: 26px;
+        height: 26px;
     }
 }
 

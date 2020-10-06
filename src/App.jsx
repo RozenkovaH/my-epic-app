@@ -15,19 +15,27 @@ class App extends React.Component {
   constructor () {
     super()
     this.state = {
+      user: [],
       tasks: [],
       tasksCount: 0,
       token: undefined
     }
+    this.getUser = this.getUser.bind(this)
     this.getTasks = this.getTasks.bind(this)
   }
 
   componentDidMount () {
-    this.getTasks()
-    console.log(Cookies.get('accessToken'))
     const token = Cookies.get('accessToken')
     this.setState({ token: token })
-    console.log(this.state.token)
+    this.getUser()
+    this.getTasks()
+  }
+
+  getUser () {
+    fetch('https://garage-best-team-ever.tk/whoami')
+      .then(data => data.json())
+      .then(json => this.setState({ user: json }))
+      .then(console.log(json))
   }
 
   getTasks () {

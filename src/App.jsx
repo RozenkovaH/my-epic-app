@@ -35,7 +35,6 @@ class App extends React.Component {
     fetch('https://garage-best-team-ever.tk/whoami')
       .then(data => data.json())
       .then(json => this.setState({ user: json }))
-      .then(() => console.log(this.state.user))
   }
 
   getTasks () {
@@ -69,7 +68,7 @@ class App extends React.Component {
         <Route exact path="/">
           <div className={styles.page}>
             <SideHeader />
-            <Header />
+            <Header userProfile={this.state.user} />
             <SideHeader />
 
             <SideMain />

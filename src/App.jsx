@@ -7,6 +7,7 @@ import SideBar from './Components/SideBar/SideBar'
 import Workspace from './Components/Workspace/Workspace'
 import styles from './AppStyles.module.css'
 import Signin from './Components/Signin/Signin'
+import Favicon from 'react-favicon'
 import Cookies from 'js-cookie'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
@@ -52,6 +53,7 @@ class App extends React.Component {
   render () {
     return (
       <Router>
+        <Favicon url="https://raw.githubusercontent.com/RozenkovaH/xsolla-garage-frontend/master/src/favicon.ico"/>
         { this.state.token === undefined ? <Redirect to="/signin" /> : <Redirect to="/" />}
         <Route exact path="/signin">
           <Signin />

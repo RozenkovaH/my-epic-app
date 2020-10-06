@@ -8,7 +8,7 @@ const Greeting = props => {
       <div className={styles.ImageContainer}>
         <img src={planner} className={styles.grImage}/>
       </div>
-      <p className={styles.helloUser}>Привет, {props.userProfile.name}!</p>
+      <p className={styles.helloUser}>Привет, {props.userProfile.given_name}!</p>
       <p className={styles.currentTasks}>Количество текущих задач:&nbsp;<b>{props.tasksCount}</b></p>
     </div>
   )

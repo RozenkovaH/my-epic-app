@@ -259,7 +259,7 @@ const Task = ({ id, title, bodyTask, tags, dateTarget, isNew, open, setOpen, get
           <div className={styles.priority} style={ priority === true ? {background: "#FF005B"} : {background: "none"} } />
             <input type="checkbox" className={styles.Checkbox} />
             <div className={styles.TitleDataWrapper}>
-              <input maxLength="100" placeholder="Добавьте название задачи" className={styles.Title} value={taskTitle}
+              <input maxLength="100" placeholder="Введите название задачи" className={styles.Title} value={taskTitle}
                 onChange={(e) => {
                   if (!editMode) {
                     e.preventDefault();

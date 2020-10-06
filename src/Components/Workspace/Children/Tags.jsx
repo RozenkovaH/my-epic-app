@@ -79,7 +79,7 @@ const Tags = props => {
         ))}
         <form className={styles.addTag} style={{ display: tags.length > 4 && "none"}} onSubmit={event => addTags(event)}>
           <button className={styles.addTagButton} type={'submit'} style={{ display: !props.editMode && "none" }}>+</button>
-          <input type="text" maxLength="30" placeholder="Добавьте тег" onChange={e => setInput(e.target.value)} 
+          <input type="text" maxLength="30" placeholder="Введите тег" onChange={e => setInput(e.target.value)} 
             style={{ display: !props.editMode && "none" }}/>
         </form>
       </ul>

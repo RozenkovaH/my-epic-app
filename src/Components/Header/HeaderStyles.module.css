@@ -41,6 +41,10 @@
     align-items: center;
 }
 
+.faq:hover {
+    fill: #3e3e3e;
+}
+
 .headerInfoBell {
     cursor:pointer;
 }

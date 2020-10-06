@@ -5,7 +5,7 @@ import { sideBar } from './SideBarStyles.module.css'
 const SideBar = props => {
   return (
     <aside className={sideBar}>
-      <CalendarAndGreeting tasksCount={props.tasksCount}/>
+      <CalendarAndGreeting userProfile={props.userProfile} tasksCount={props.tasksCount} />
     </aside>
   )
 }

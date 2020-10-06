@@ -12,7 +12,7 @@ import Cookies from 'js-cookie'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       user: [],
@@ -24,20 +24,20 @@ class App extends React.Component {
     this.getTasks = this.getTasks.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const token = Cookies.get('accessToken')
     this.setState({ token: token })
     this.getUser()
     this.getTasks()
   }
 
-  getUser () {
+  getUser() {
     fetch('https://garage-best-team-ever.tk/whoami')
       .then(data => data.json())
       .then(json => this.setState({ user: json }))
   }
 
-  getTasks () {
+  getTasks() {
     fetch('https://garage-best-team-ever.tk/task')
       .then(data => data.json())
       .then(json => {
@@ -57,10 +57,10 @@ class App extends React.Component {
       })
   }
 
-  render () {
+  render() {
     return (
       <Router>
-        <Favicon url="https://raw.githubusercontent.com/RozenkovaH/xsolla-garage-frontend/master/src/favicon.ico"/>
+        <Favicon url="https://raw.githubusercontent.com/RozenkovaH/xsolla-garage-frontend/master/src/favicon.ico" />
         { this.state.token === undefined ? <Redirect to="/signin" /> : <Redirect to="/" />}
         <Route exact path="/signin">
           <Signin />
@@ -72,8 +72,8 @@ class App extends React.Component {
             <SideHeader />
 
             <SideMain />
-            <SideBar tasksCount={this.state.tasksCount} />
-            <Workspace tasks={this.state.tasks} getTasks={this.getTasks}/>
+            <SideBar userProfile={this.state.user} tasksCount={this.state.tasksCount} />
+            <Workspace tasks={this.state.tasks} getTasks={this.getTasks} />
             <SideMain />
           </div>
         </Route>

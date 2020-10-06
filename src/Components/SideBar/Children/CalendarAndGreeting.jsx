@@ -7,8 +7,8 @@ const CalendarAndGreeting = props => {
 
   return (
     <div className={styles.CalendarAndGreeting}>
-      <Greeting tasksCount={props.tasksCount}/>
-      <CalendarReact/>
+      <Greeting userProfile={props.userProfile} tasksCount={props.tasksCount} />
+      <CalendarReact />
     </div>
   )
 }

@@ -3,14 +3,12 @@ import styles from './GreetingStyles.module.css'
 import planner from '../../../Assets/Pictures/Planner.png'
 
 const Greeting = props => {
-  let userName = "User"
-
   return (
     <div className={styles.greeting}>
       <div className={styles.ImageContainer}>
         <img src={planner} className={styles.grImage}/>
       </div>
-      <p className={styles.helloUser}>Привет, {userName}!</p>
+      <p className={styles.helloUser}>Привет, {props.userProfile.name}!</p>
       <p className={styles.currentTasks}>Количество текущих задач:&nbsp;<b>{props.tasksCount}</b></p>
     </div>
   )

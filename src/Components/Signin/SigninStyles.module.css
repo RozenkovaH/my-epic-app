@@ -8,6 +8,11 @@
     url("https://db.onlinewebfonts.com/t/ff43ca80668e47a1b1208ba9aed65ad2.svg#Sharp Grotesk Medium 20") format("svg"); /* iOS 4.1- */
 }
 
+.page {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
 .container {
     position: absolute;
     top: 50%;

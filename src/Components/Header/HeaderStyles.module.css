@@ -68,6 +68,14 @@
     margin-left: 0.5vw;
 }
 
+.headerInfo > div > svg {
+    margin-left: 0.5vw;
+}
+
+.header a svg {
+    height: 1.4em;
+}
+
 @media screen and (max-width: 991px) {
 }
 
@@ -83,8 +91,6 @@
 
 @media screen and (max-width: 767px) {
     .ava {
-        margin-bottom: 4%;
-        margin-top: 4%;
         width: 40.5px;
         height: 40.5px;
     }
@@ -93,12 +99,15 @@
         height: 3.8em;
     }
 
+    .header a svg {
+        height: 1em;
+    }
+
     .headerTitle {
         width: 19em;
     }
 
     .headerInfo {
-        width: 5.7em;
     }
 
     .headerInfoName {
